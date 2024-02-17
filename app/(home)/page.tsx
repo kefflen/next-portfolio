@@ -1,5 +1,6 @@
 import { Header } from "../components/header"
 import { HeroSection } from "./_components/hero-section"
+import { HighlightProjects } from "./_components/highlight-projects"
 import { KnowTechs } from "./_components/know-techs"
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <KnowTechs />
+      <HighlightProjects />
     </main>
   )
 }
