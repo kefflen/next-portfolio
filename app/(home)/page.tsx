@@ -7,7 +7,6 @@ import { WorkExperience } from "./_components/work-experience"
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      <Header />
       <HeroSection />
       <KnowTechs />
       <HighlightProjects />
