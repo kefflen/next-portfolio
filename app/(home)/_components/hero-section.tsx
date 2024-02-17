@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const MOCK_CONTACT = [
   {
-    url: "https://github.com.br/kefflen",
+    url: "https://github.com/kefflen",
     icon: Github,
   },
   {
