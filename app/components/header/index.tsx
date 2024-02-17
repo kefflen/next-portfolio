@@ -19,7 +19,7 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   return (
-    <header className="bg-gray-800 text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+    <header className="text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center">
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
           <h1 className="text-4xl text-emerald-500">KF</h1>
