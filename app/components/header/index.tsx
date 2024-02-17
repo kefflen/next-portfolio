@@ -22,7 +22,7 @@ export const Header = () => {
     <header className="bg-gray-800 text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center">
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
-          <h1 className="text-5xl">KF</h1>
+          <h1 className="text-4xl text-emerald-500">KF</h1>
         </Link>
 
         <nav className="flex gap-4 sm:gap-10">
