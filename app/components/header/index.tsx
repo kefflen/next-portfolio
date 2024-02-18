@@ -1,4 +1,5 @@
-'use client'
+"use client"
+import { motion } from "framer-motion"
 import Link from "next/link"
 import { NavItem } from "./nav-item"
 
@@ -19,7 +20,12 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   return (
-    <header className="text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center"
+    >
       <div className="container flex items-center justify-between">
         <Link href={"/"}>
           <h1 className="text-4xl text-emerald-500">KF</h1>
@@ -31,6 +37,6 @@ export const Header = () => {
           ))}
         </nav>
       </div>
-    </header>
+    </motion.header>
   )
 }

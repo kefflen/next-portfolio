@@ -1,6 +1,7 @@
-'use client'
+"use client"
 import { Button } from "@/app/components/Button"
 import { TechBadge } from "@/app/components/tech-badge"
+import { motion } from "framer-motion"
 import { ArrowRight, Github, Linkedin } from "lucide-react"
 import Image from "next/image"
 
@@ -15,6 +16,15 @@ const MOCK_CONTACT = [
   },
 ]
 
+const MOCK_TECHS = [
+  "React",
+  "Next.js",
+  "Tailwind",
+  "Node.js",
+  "TypeScript",
+  "Docker",
+]
+
 export const HeroSection = () => {
   const handleContact = () => {
     const contactSection = document.getElementById("contact")
@@ -26,7 +36,13 @@ export const HeroSection = () => {
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex item-start justify-between flex-col-reverse lg:flex-row">
-        <div className="w-full lg:max-w-[530px]">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:max-w-[530px]"
+        >
           <p className="font-mono text-emerald-400">Ola, meu nome é</p>
           <h2 className="text-4xl font-medium">Kefflen Moreno Ramos</h2>
           <p className="text-gray-400 my-6 text-sm sm:text-base">
@@ -35,10 +51,16 @@ export const HeroSection = () => {
             excelência em Análise e Desenvolvimento de Sistemas.
           </p>
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
-            <TechBadge tech="React" />
-            <TechBadge tech="Next.js" />
-            <TechBadge tech="Tailwind" />
-            <TechBadge tech="Node.js" />
+            {MOCK_TECHS.map((tech, index) => (
+              <TechBadge
+                key={`intro-tech-${tech}`}
+                tech={tech}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              />
+            ))}
           </div>
           <div className="flex mt-6 flex-col lg:mt-10 sm:items-center sm:gap-5 sm:flex-row">
             <Button onClick={handleContact} className="shadow-button">
@@ -58,13 +80,22 @@ export const HeroSection = () => {
               ))}
             </div>
           </div>
-        </div>
-        <Image
-          width={420}
-          height={404}
-          src={"/images/profile-pic.jpg"}
-          alt="Foto de perfil"
-        />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 200, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="origin-center"
+        >
+          <Image
+            className="rounded-lg"
+            width={420}
+            height={404}
+            src={"/images/profile-pic.jpg"}
+            alt="Foto de perfil"
+          />
+        </motion.div>
       </div>
     </section>
   )
