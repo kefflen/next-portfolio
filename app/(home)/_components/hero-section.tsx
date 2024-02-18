@@ -1,3 +1,4 @@
+'use client'
 import { Button } from "@/app/components/Button"
 import { TechBadge } from "@/app/components/tech-badge"
 import { ArrowRight, Github, Linkedin } from "lucide-react"
@@ -15,14 +16,19 @@ const MOCK_CONTACT = [
 ]
 
 export const HeroSection = () => {
+  const handleContact = () => {
+    const contactSection = document.getElementById("contact")
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex item-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[530px]">
           <p className="font-mono text-emerald-400">Ola, meu nome é</p>
-          <h2 className="text-4xl font-medium">
-            Kefflen Moreno Ramos
-          </h2>
+          <h2 className="text-4xl font-medium">Kefflen Moreno Ramos</h2>
           <p className="text-gray-400 my-6 text-sm sm:text-base">
             Sou um desenvolvedor de software criativo, proativo e apaixonado por
             resolver problemas complexos com soluções inteligentes. Formado com
@@ -35,7 +41,7 @@ export const HeroSection = () => {
             <TechBadge tech="Node.js" />
           </div>
           <div className="flex mt-6 flex-col lg:mt-10 sm:items-center sm:gap-5 sm:flex-row">
-            <Button className="shadow-button">
+            <Button onClick={handleContact} className="shadow-button">
               Entre em contato
               <ArrowRight size={24} />
             </Button>
