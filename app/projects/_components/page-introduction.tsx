@@ -1,5 +1,7 @@
+"use client"
 import { Link } from "@/app/components/link"
 import { SectionTitle } from "@/app/components/section-title"
+import { motion } from "framer-motion"
 import { HiArrowNarrowLeft } from "react-icons/hi"
 
 export const PageIntroduction = () => {
@@ -10,7 +12,13 @@ export const PageIntroduction = () => {
         title="Meus projetos"
         className="text-center items-center [&>h3]:text-4xl"
       />
-      <div className="flex flex-col items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-col items-center"
+      >
         <p className="text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
           Aqui estão alguns dos projetos que eu fiz, como projetos pessoais, de
           cursos e eventos de programação.
@@ -19,7 +27,7 @@ export const PageIntroduction = () => {
           <HiArrowNarrowLeft className="text-emerald-500" size={20} />
           Voltar para home
         </Link>
-      </div>
+      </motion.div>
     </section>
   )
 }
