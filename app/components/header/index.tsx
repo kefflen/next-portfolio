@@ -12,10 +12,12 @@ const NAV_ITEMS = [
     label: "Projects",
     href: "/projects",
   },
+  /*
   {
     label: "CV",
     href: "/CV",
   },
+  */
 ]
 
 export const Header = () => {
