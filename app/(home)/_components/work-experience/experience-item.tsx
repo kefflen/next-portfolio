@@ -26,7 +26,7 @@ export const ExperienceItem = () => {
             @ CHB Sistemas
           </a>
           <h4 className="text-gray-300">Estagiario de desenvolvimento</h4>
-          <span>Entrou 2021 - Saiu 2022 - (1 ano)</span>
+          <span>2021 - 2022 - (1 ano)</span>
           <p className="text-gray-400">
             Desenvolvimento e manutenção de interfaces e rotinas utilizando
             Genexus. Enquanto estagiário, tive a oportunidade de trabalhar em
