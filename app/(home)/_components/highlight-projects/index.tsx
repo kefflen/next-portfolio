@@ -16,7 +16,7 @@ export const HighlightProjects = () => {
             <ProjectCard
               title={project.title}
               slug={project.slug}
-              description={project.description}
+              description={project.summary}
               thumbnailUrl={project.thumbnailUrl}
               techs={project.techs}
             />
