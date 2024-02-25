@@ -14,6 +14,12 @@ query MyQuery {
     thumbnail {
       url
     }
+    sections {
+      title
+      image {
+        url
+      }
+    }
   }
 }
 `

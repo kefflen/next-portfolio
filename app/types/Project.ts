@@ -13,6 +13,8 @@ export type Project = {
   liveUrl?: string
   sections: {
     title: string
-    image: string
+    image: {
+      url: string
+    }
   }[]
 }
