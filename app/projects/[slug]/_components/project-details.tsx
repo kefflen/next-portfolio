@@ -3,6 +3,7 @@ import { Button } from "@/app/components/Button"
 import { Link } from "@/app/components/link"
 import { SectionTitle } from "@/app/components/section-title"
 import { TechBadge } from "@/app/components/tech-badge"
+import { Project } from "@/app/types/Project"
 import { motion } from "framer-motion"
 import { FiGlobe } from "react-icons/fi"
 import { HiArrowNarrowLeft } from "react-icons/hi"
@@ -19,14 +20,7 @@ const MOCK_TECHS = [
 ]
 
 type ProjectDetailsProps = {
-  project: {
-    title: string
-    thumbnailUrl: string
-    description: string
-    techs: string[]
-    githubUrl?: string
-    liveUrl?: string
-  }
+  project: Project
 }
 //TODO: Fix background image not showing
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
@@ -35,7 +29,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <div
         className="absolute inset-0 z-[-1]"
         style={{
-          background: `url(/images/hero-pattern.svg) no-repeat cemter/cover, url(${project.thumbnailUrl}) no-repeat center/cover`,
+          background: `url(/images/hero-pattern.svg) no-repeat cemter/cover, url(${project.thumbnail.url}) no-repeat center/cover`,
         }}
       />
       <SectionTitle
@@ -60,7 +54,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             key={index}
-            tech={tech}
+            tech={tech.name}
           />
         ))}
       </div>

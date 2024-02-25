@@ -3,7 +3,9 @@ import Image from "next/image"
 type ProjectSectionsProps = {
   sections: {
     title: string
-    image: string
+    image: {
+      url: string
+    }
   }[]
 }
 
@@ -19,7 +21,7 @@ export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
             {section.title}
           </h2>
           <Image
-            src={section.image}
+            src={section.image.url}
             alt={`Imagem da seção ${section.title}`}
             width={1080}
             height={372}
