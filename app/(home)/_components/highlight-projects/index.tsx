@@ -5,6 +5,7 @@ import { Project } from "@/app/types/Project"
 import { fetchHygraphQuery } from "@/app/utils/fetch-hygraph-query"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { ProjectCard } from "./project-card"
+import { fetchProjects } from "@/app/utils/fetch-projects"
 
 const query = `
 query MyQuery {
@@ -24,10 +25,7 @@ query MyQuery {
 `
 
 export const HighlightProjects = async () => {
-  const { projects } = (await fetchHygraphQuery<{ projects: Project[] }>(
-    query,
-    60 * 60 * 24
-  )) || { projects: [] }
+  const projects = await fetchProjects()
 
   return (
     <section className="container py-16">
