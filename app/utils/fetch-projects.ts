@@ -7,6 +7,8 @@ query MyQuery {
     id
     slug
     summary
+    liveProjectUrl
+    githubUrl
     techs {
       name
     }

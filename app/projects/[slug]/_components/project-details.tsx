@@ -1,23 +1,13 @@
-"use client"
-import { Button } from "@/app/components/Button"
-import { Link } from "@/app/components/link"
-import { SectionTitle } from "@/app/components/section-title"
-import { TechBadge } from "@/app/components/tech-badge"
-import { Project } from "@/app/types/Project"
-import { motion } from "framer-motion"
-import { FiGlobe } from "react-icons/fi"
-import { HiArrowNarrowLeft } from "react-icons/hi"
-import { TbBrandGithub } from "react-icons/tb"
-
-const MOCK_TECHS = [
-  "react",
-  "nextjs",
-  "typescript",
-  "tailwind",
-  "nodejs",
-  "express",
-  "mongodb",
-]
+'use client'
+import { Button } from '@/app/components/Button'
+import { Link } from '@/app/components/link'
+import { SectionTitle } from '@/app/components/section-title'
+import { TechBadge } from '@/app/components/tech-badge'
+import { Project } from '@/app/types/Project'
+import { motion } from 'framer-motion'
+import { FiGlobe } from 'react-icons/fi'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { TbBrandGithub } from 'react-icons/tb'
 
 type ProjectDetailsProps = {
   project: Project
@@ -59,20 +49,20 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         ))}
       </div>
       <div className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row">
-        <a href="https://www.github.com" target="_blank">
+        <a href={project.githubUrl} target="_blank">
           <Button className="min-w-[180px]" disabled={!project.githubUrl}>
             <TbBrandGithub />
             Repositorio
           </Button>
         </a>
-        <a href="https://www.github.com" target="_blank">
-          <Button className="min-w-[180px]" disabled={!project.liveUrl}>
+        <a href={project.liveProjectUrl} target="_blank">
+          <Button className="min-w-[180px]" disabled={!project.liveProjectUrl}>
             <FiGlobe />
             Site online
           </Button>
         </a>
       </div>
-      <Link href={"/projects"}>
+      <Link href={'/projects'}>
         <HiArrowNarrowLeft size={20} className="text-emerald-500" />
         Voltar para projetos
       </Link>
