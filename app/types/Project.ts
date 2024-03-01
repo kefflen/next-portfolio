@@ -10,7 +10,7 @@ export type Project = {
     name: string
   }[]
   githubUrl?: string
-  liveUrl?: string
+  liveProjectUrl?: string
   sections: {
     title: string
     image: {
