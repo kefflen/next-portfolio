@@ -1,26 +1,22 @@
-"use client"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { NavItem } from "./nav-item"
-
-const NAV_ITEMS = [
-  {
-    label: "Home",
-    href: "/",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-  },
-  /*
-  {
-    label: "CV",
-    href: "/CV",
-  },
-  */
-]
+'use client'
+import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { NavItem } from './nav-item'
 
 export const Header = () => {
+  const t = useTranslations()
+  const NAV_ITEMS = [
+    {
+      label: t('header.home'),
+      href: '/',
+    },
+    {
+      label: t('header.projects'),
+      href: '/projects',
+    },
+  ]
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -29,7 +25,7 @@ export const Header = () => {
       className="text-white p-4 absolute top-0 w-full z-10 h-24 flex items-center justify-center"
     >
       <div className="container flex items-center justify-between">
-        <Link href={"/"}>
+        <Link href={'/'}>
           <h1 className="text-4xl text-emerald-500">KF</h1>
         </Link>
 

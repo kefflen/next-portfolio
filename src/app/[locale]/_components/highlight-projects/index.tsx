@@ -22,12 +22,21 @@ query MyQuery {
 }
 `
 
-export const HighlightProjects = async () => {
+type hightlightProjectsProps = {
+  texts: {
+    title: string
+    subtitle: string
+    goToProject: string
+    wantToSeeMore: string
+  }
+}
+export const HighlightProjects = async ({ texts }: hightlightProjectsProps) => {
+  const { title, subtitle, goToProject, wantToSeeMore } = texts
   const projects = await fetchProjects()
 
   return (
     <section className="container py-16">
-      <SectionTitle title="Projetos em destaque" subtitle="destaque" />
+      <SectionTitle title={title} subtitle={subtitle} />
       <HorizontalDevider className="mb-16" />
       <div>
         {projects.map((project) => (
@@ -43,9 +52,9 @@ export const HighlightProjects = async () => {
           </div>
         ))}
         <p className="flex items-center gap-1.5">
-          <span className="text-gray-400">Se interessou?</span>
+          <span className="text-gray-400">{wantToSeeMore}</span>
           <Link href="/projects" className="">
-            Ver todos os projetos
+            {goToProject}
             <HiArrowNarrowRight />
           </Link>
         </p>

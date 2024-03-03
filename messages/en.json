@@ -1,9 +1,48 @@
 {
+  "footer": {
+    "title": "Let's work together, suggestions or questions? Get in touch!",
+    "subtitle": "contact",
+    "namePlaceholder": "Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "sendButton": "Send message"
+  },
+  "header": {
+    "projects": "Projects",
+    "home": "Home"
+  },
   "home": {
     "heroSection": {
       "presentation": "Hello, my name is",
-      "aboutMe": "I am a creative, proactive software developer passionate about solving complex problems with intelligent solutions. Graduated with excellence in Systems Analysis and Development.",
+      "aboutMe": "I am a creative, proactive software developer passionate about solving complex problems with smart solutions. Graduated with excellence in Systems Analysis and Development.",
       "contactMe": "Contact me"
+    },
+    "knowTechs": {
+      "title": "Skills",
+      "subtitle": "knowledge"
+    },
+    "highlightProjects": {
+      "title": "Featured Projects",
+      "subtitle": "highlight",
+      "goToProject": "View all projects",
+      "wantToSeeMore": "Interested?",
+      "components": {
+        "projectCard": {
+          "seeMore": "See more"
+        }
+      }
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "subtitle": "experience",
+      "text": "I have worked with web systems development and maintenance. During this time, I had the opportunity to work with system integrations, bug fixes, and development of new features. I also had the chance to work with a great team, where I could learn a lot and share knowledge.",
+      "components": {
+        "experienceCard": {
+          "skills": "Skills",
+          "chbText": "I have worked with web systems development and maintenance. During this time, I had the opportunity to work with system integrations, bug fixes, and development of new features. I also had the chance to work with a great team, where I could learn a lot and share knowledge.",
+          "chbRole": "Development intern"
+        }
+      }
     }
   }
 }

@@ -8,6 +8,7 @@ import { Header } from '../components/header'
 import { Toaster } from '../components/toaster'
 import { locales } from '../types/locales'
 import './globals.css'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -29,17 +30,22 @@ export default function RootLayout({
     locale: string
   }
 }) {
-  
+  const messages = useMessages()
+
   return (
     <html lang={locale} className={`${inter.variable} ${plexMono.variable}`}>
       <body>
-        <Analytics />
-        <Toaster />
-        <Header />
-        {children}
-        <ContactForm />
-        <Footer />
-        <BackToTop />
+        <NextIntlClientProvider
+          messages={messages}
+        >
+          <Analytics />
+          <Toaster />
+          <Header />
+          {children}
+          <ContactForm />
+          <Footer />
+          <BackToTop />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

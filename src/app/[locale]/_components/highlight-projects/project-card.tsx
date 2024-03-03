@@ -1,5 +1,6 @@
 import { Link } from "@/app/components/link"
 import { TechBadge } from "@/app/components/tech-badge"
+import { getTranslations } from "next-intl/server"
 import Image from "next/image"
 import { HiArrowNarrowRight } from "react-icons/hi"
 
@@ -11,13 +12,15 @@ type ProjectCardProps = {
   techs: string[]
 }
 
-export const ProjectCard = ({
+export const ProjectCard = async ({
   title,
   slug,
   description,
   thumbnailUrl,
   techs,
 }: ProjectCardProps) => {
+  const t = await getTranslations()
+  
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row">
       <div className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full">
@@ -49,7 +52,7 @@ export const ProjectCard = ({
         </div>
 
         <Link href={`/projects/${slug}`} className="">
-          Ver projeto
+          {t('home.highlightProjects.components.projectCard.seeMore')}
           <HiArrowNarrowRight />
         </Link>
       </div>

@@ -1,9 +1,48 @@
 {
+  "footer": {
+    "title": "Vamos tabalhar juntos, sugestões ou dúvidas? Entre em contato!",
+    "subtitle": "contato",
+    "namePlaceholder": "Nome",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Mensagem",
+    "sendButton": "Enviar mensagem"
+  },
+  "header": {
+    "projects": "Projetos",
+    "home": "Início"
+  },
   "home": {
     "heroSection": {
       "presentation": "Ola, meu nome é",
       "aboutMe": "Sou um desenvolvedor de software criativo, proativo e apaixonado por resolver problemas complexos com soluções inteligentes. Formado com excelência em Análise e Desenvolvimento de Sistemas.",
       "contactMe": "Entre em contato"
+    },
+    "knowTechs": {
+      "title": "Habilidades",
+      "subtitle": "conhecimentos"
+    },
+    "highlightProjects": {
+      "title": "Projetos em destaque",
+      "subtitle": "destaque",
+      "goToProject": "Ver projeto todos os projetos",
+      "wantToSeeMore": "Se interessou?",
+      "components": {
+        "projectCard": {
+          "seeMore": "Ver mais"
+        }
+      }
+    },
+    "workExperience": {
+      "title": "Experiência profissional",
+      "subtitle": "experiência",
+      "text": "Trabalhei com desenvolvimento e manutenção de sistemas web. E durante esse tempo, tive a oportunidade de trabalhar com intergrações de sistemas, correções de bugs e desenvolvimento de novas funcionalidades. Tambem pude trabalhar com uma otima equipe, onde pude aprender muito e compartilhar conhecimento.",
+      "components": {
+        "experienceCard": {
+          "skills": "Habilidades",
+          "chbText": "Trabalhei com desenvolvimento e manutenção de sistemas web. E durante esse tempo, tive a oportunidade de trabalhar com intergrações de sistemas, correções de bugs e desenvolvimento de novas funcionalidades. Tambem pude trabalhar com uma otima equipe, onde pude aprender muito e compartilhar conhecimento.",
+          "chbRole": "Estagiario de desenvolvimento"
+        }
+      }
     }
   }
 }

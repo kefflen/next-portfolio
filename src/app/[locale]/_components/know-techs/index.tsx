@@ -6,15 +6,20 @@ type KnowTechsProps = {
     icon: JSX.Element
     name: string
     startDate: string
-  }[]
+  }[],
+  texts: {
+    title: string
+    subtitle: string
+  }
 }
 
 export const KnowTechs = ({
-  techs
+  techs, texts
 }: KnowTechsProps) => {
+  const { title, subtitle } = texts
   return (
     <section className="container py-16">
-      <SectionTitle title="competências" subtitle="Conhecimentos" />
+      <SectionTitle title={title} subtitle={subtitle} />
       <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]">
         {techs.map((tech, index) => (
           <KnowTech

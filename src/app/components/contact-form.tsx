@@ -1,12 +1,13 @@
-"use client"
-import { zodResolver } from "@hookform/resolvers/zod"
-import axios from "axios"
-import { useForm } from "react-hook-form"
-import { HiArrowNarrowRight } from "react-icons/hi"
-import { z } from "zod"
-import { Button } from "./Button"
-import { SectionTitle } from "./section-title"
-import toast from "react-hot-toast"
+'use client'
+import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios'
+import { useTranslations } from 'next-intl'
+import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { z } from 'zod'
+import { Button } from './Button'
+import { SectionTitle } from './section-title'
 
 const contactFormSchema = z.object({
   name: z.string().min(1).max(100),
@@ -16,6 +17,7 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>
 export const ContactForm = () => {
+  const t = useTranslations()
   const {
     handleSubmit,
     register,
@@ -27,11 +29,11 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      await axios.post("/api/contact", data)
-      toast.success("Mensagem enviada com sucesso!")
+      await axios.post('/api/contact', data)
+      toast.success('Mensagem enviada com sucesso!')
       reset()
     } catch (error) {
-      toast.error("Erro ao enviar mensagem, tente novamente mais tarde.")
+      toast.error('Erro ao enviar mensagem, tente novamente mais tarde.')
     }
   }
 
@@ -42,8 +44,8 @@ export const ContactForm = () => {
     >
       <div className="w-full max-w-[420px] mx-auto">
         <SectionTitle
-          title="Vamos tabalhar juntos, sugestões ou dúvidas? Entre em contato!"
-          subtitle="contato"
+          title={t('footer.title')}
+          subtitle={t('footer.subtitle')}
           className="items-center text-center"
         />
         <form
@@ -51,18 +53,18 @@ export const ContactForm = () => {
           className="mt-12 w-full flex flex-col gap-4"
         >
           <input
-            {...register("name", { required: true })}
-            placeholder="Nome"
+            {...register('name', { required: true })}
+            placeholder={t('footer.namePlaceholder')}
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <input
-            {...register("email", { required: true })}
-            placeholder="E-mail"
+            {...register('email', { required: true })}
+            placeholder={t('footer.emailPlaceholder')}
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           <input
-            {...register("message", { required: true })}
-            placeholder="Mensagem"
+            {...register('message', { required: true })}
+            placeholder={t('footer.messagePlaceholder')}
             maxLength={500}
             className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
@@ -72,7 +74,7 @@ export const ContactForm = () => {
             type="submit"
             className="w-max mx-auto mt-6 shadow-button"
           >
-            Enviar mensagem
+            {t('footer.sendButton')}
             <HiArrowNarrowRight size={18} />
           </Button>
         </form>

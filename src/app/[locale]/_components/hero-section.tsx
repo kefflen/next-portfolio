@@ -26,16 +26,17 @@ const MOCK_TECHS = [
 ]
 
 type HeroSectionProps = {
-  presentation: string
-  aboutMe: string
-  contactMe: string
+  texts: {
+    presentation: string
+    aboutMe: string
+    contactMe: string
+  }
 }
 
 export const HeroSection = ({
-  presentation,
-  aboutMe,
-  contactMe,
+  texts,
 }: HeroSectionProps) => {
+  const { presentation, aboutMe, contactMe } = texts
   const handleContact = () => {
     const contactSection = document.getElementById('contact')
     if (contactSection) {
