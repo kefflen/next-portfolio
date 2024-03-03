@@ -1,8 +1,8 @@
-import NotFound from "@/app/not-found"
-import { fetchProjects } from "@/app/utils/fetch-projects"
-import { ProjectDetails } from "./_components/project-details"
-import { ProjectSections } from "./_components/project-sections"
-import { fetchHygraphQuery } from "@/app/utils/fetch-hygraph-query"
+import NotFound from '@/app/[locale]/not-found'
+import { fetchHygraphQuery } from '@/app/utils/fetch-hygraph-query'
+import { fetchProjects } from '@/app/utils/fetch-projects'
+import { ProjectDetails } from './_components/project-details'
+import { ProjectSections } from './_components/project-sections'
 
 type ProjectPageProps = {
   params: {

@@ -1,11 +1,9 @@
-import { HorizontalDevider } from "@/app/components/devider"
-import { Link } from "@/app/components/link"
-import { SectionTitle } from "@/app/components/section-title"
-import { Project } from "@/app/types/Project"
-import { fetchHygraphQuery } from "@/app/utils/fetch-hygraph-query"
-import { HiArrowNarrowRight } from "react-icons/hi"
-import { ProjectCard } from "./project-card"
-import { fetchProjects } from "@/app/utils/fetch-projects"
+import { HorizontalDevider } from '@/app/components/devider'
+import { Link } from '@/app/components/link'
+import { SectionTitle } from '@/app/components/section-title'
+import { fetchProjects } from '@/app/utils/fetch-projects'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { ProjectCard } from './project-card'
 
 const query = `
 query MyQuery {
