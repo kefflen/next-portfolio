@@ -1,35 +1,45 @@
-"use client"
-import { Button } from "@/app/components/Button"
-import { TechBadge } from "@/app/components/tech-badge"
-import { motion } from "framer-motion"
-import { ArrowRight, Github, Linkedin } from "lucide-react"
-import Image from "next/image"
+'use client'
+import { Button } from '@/app/components/Button'
+import { TechBadge } from '@/app/components/tech-badge'
+import { motion } from 'framer-motion'
+import { ArrowRight, Github, Linkedin } from 'lucide-react'
+import Image from 'next/image'
 
 const MOCK_CONTACT = [
   {
-    url: "https://github.com/kefflen",
+    url: 'https://github.com/kefflen',
     icon: Github,
   },
   {
-    url: "https://linkedin.com/in/kefflen",
+    url: 'https://linkedin.com/in/kefflen',
     icon: Linkedin,
   },
 ]
 
 const MOCK_TECHS = [
-  "React",
-  "Next.js",
-  "Tailwind",
-  "Node.js",
-  "TypeScript",
-  "Docker",
+  'React',
+  'Next.js',
+  'Tailwind',
+  'Node.js',
+  'TypeScript',
+  'Docker',
 ]
 
-export const HeroSection = () => {
+type HeroSectionProps = {
+  presentation: string
+  aboutMe: string
+  contactMe: string
+}
+
+export const HeroSection = ({
+  presentation,
+  aboutMe,
+  contactMe,
+}: HeroSectionProps) => {
   const handleContact = () => {
-    const contactSection = document.getElementById("contact")
+    const contactSection = document.getElementById('contact')
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" })
+      contactSection.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -43,13 +53,9 @@ export const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="w-full lg:max-w-[530px]"
         >
-          <p className="font-mono text-emerald-400">Ola, meu nome é</p>
+          <p className="font-mono text-emerald-400">{presentation}</p>
           <h2 className="text-4xl font-medium">Kefflen Moreno Ramos</h2>
-          <p className="text-gray-400 my-6 text-sm sm:text-base">
-            Sou um desenvolvedor de software criativo, proativo e apaixonado por
-            resolver problemas complexos com soluções inteligentes. Formado com
-            excelência em Análise e Desenvolvimento de Sistemas.
-          </p>
+          <p className="text-gray-400 my-6 text-sm sm:text-base">{aboutMe}</p>
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {MOCK_TECHS.map((tech, index) => (
               <TechBadge
@@ -64,7 +70,7 @@ export const HeroSection = () => {
           </div>
           <div className="flex mt-6 flex-col lg:mt-10 sm:items-center sm:gap-5 sm:flex-row">
             <Button onClick={handleContact} className="shadow-button">
-              Entre em contato
+              {contactMe}
               <ArrowRight size={24} />
             </Button>
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
@@ -92,7 +98,7 @@ export const HeroSection = () => {
             className="rounded-lg"
             width={420}
             height={404}
-            src={"/images/profile-pic.jpg"}
+            src={'/images/profile-pic.jpg'}
             alt="Foto de perfil"
           />
         </motion.div>

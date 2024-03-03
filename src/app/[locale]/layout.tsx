@@ -6,6 +6,7 @@ import { ContactForm } from '../components/contact-form'
 import { Footer } from '../components/footer'
 import { Header } from '../components/header'
 import { Toaster } from '../components/toaster'
+import { locales } from '../types/locales'
 import './globals.css'
 
 const inter = Inter({
@@ -19,9 +20,18 @@ const plexMono = IBM_Plex_Mono({
   weight: ['400', '500'],
 })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+  params: { locale },
+}: {
+  children: ReactNode
+  params: {
+    locale: string
+  }
+}) {
+  
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${plexMono.variable}`}>
       <body>
         <Analytics />
         <Toaster />
@@ -33,4 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </body>
     </html>
   )
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
 }
