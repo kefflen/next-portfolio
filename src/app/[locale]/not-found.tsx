@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
 import { Button } from '../components/Button'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 export default function NotFound() {
+  unstable_setRequestLocale('pt')
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-9xl font-bold text-emerald-500">404</h1>

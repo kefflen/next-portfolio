@@ -54,8 +54,8 @@ export default function Home({
 }: {
   params: { locale: string }
 }) {
-  const t = useTranslations()
   unstable_setRequestLocale(locale)
+  const t = useTranslations()
   const heroSectionTexts = {
     presentation: t('home.heroSection.presentation'),
     aboutMe: t('home.heroSection.aboutMe'),
