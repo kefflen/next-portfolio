@@ -9,6 +9,7 @@ import { Toaster } from '../components/toaster'
 import { locales } from '../types/locales'
 import './globals.css'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -31,6 +32,7 @@ export default function RootLayout({
   }
 }) {
   const messages = useMessages()
+  unstable_setRequestLocale(locale)
 
   return (
     <html lang={locale} className={`${inter.variable} ${plexMono.variable}`}>

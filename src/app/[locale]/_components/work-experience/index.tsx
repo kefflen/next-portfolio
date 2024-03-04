@@ -10,7 +10,6 @@ type WorkExperienceProps = {
 }
 export const WorkExperience = ({texts}: WorkExperienceProps) => {
   const { title, subtitle, text } = texts
-
   return (
     <section className="container py-16 flex flex-col gap-10 md:gap-4 md:flex-row lg:gap-16">
       <div className="max-w-[420px]">

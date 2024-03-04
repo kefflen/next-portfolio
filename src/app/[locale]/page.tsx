@@ -9,6 +9,7 @@ import { HeroSection } from './_components/hero-section'
 import { HighlightProjects } from './_components/highlight-projects'
 import { KnowTechs } from './_components/know-techs'
 import { WorkExperience } from './_components/work-experience'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 const techs = [
   {
@@ -48,8 +49,13 @@ const techs = [
   },
 ]
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
   const t = useTranslations()
+  unstable_setRequestLocale(locale)
   const heroSectionTexts = {
     presentation: t('home.heroSection.presentation'),
     aboutMe: t('home.heroSection.aboutMe'),
@@ -77,7 +83,7 @@ export default function Home() {
       <HeroSection texts={heroSectionTexts} />
       <KnowTechs techs={techs} texts={knowTechsTexts} />
       <HighlightProjects texts={highlightProjectsTexts} />
-      <WorkExperience texts={workExperienceTexts}/>
+      <WorkExperience texts={workExperienceTexts} />
     </main>
   )
 }
