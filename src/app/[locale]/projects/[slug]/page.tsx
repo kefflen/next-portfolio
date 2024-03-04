@@ -3,16 +3,19 @@ import { fetchHygraphQuery } from '@/app/utils/fetch-hygraph-query'
 import { fetchProjects } from '@/app/utils/fetch-projects'
 import { ProjectDetails } from './_components/project-details'
 import { ProjectSections } from './_components/project-sections'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 type ProjectPageProps = {
   params: {
-    slug: string
+    slug: string,
+    locale: string
   }
 }
 
 export default async function ProjectPage({
-  params: { slug },
+  params: { slug, locale },
 }: ProjectPageProps) {
+  unstable_setRequestLocale(locale)
   const projects = await fetchProjects()
   const project = projects.find((project) => project.slug === slug)
   if (!project) return NotFound()

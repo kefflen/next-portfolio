@@ -1,7 +1,14 @@
+import { unstable_setRequestLocale } from "next-intl/server"
 import { PageIntroduction } from "./_components/page-introduction"
 import { ProjectsList } from "./_components/projects-list"
 
-export default function Projects() {
+type ProjectsProps = {
+  params: {
+    locale: string
+  }
+}
+export default function Projects({ params: { locale } }: ProjectsProps) {
+  unstable_setRequestLocale(locale)
   return (
     <>
       <PageIntroduction />
